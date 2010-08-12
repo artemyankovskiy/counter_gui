@@ -1,0 +1,426 @@
+CounterType:
+  connection: doctrine
+  tableName: counter_type
+  columns:
+    counter_type_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    counter_name:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    description:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Counters:
+      local: counter_type_id
+      foreign: counter_type_id
+      type: many
+Counters:
+  connection: doctrine
+  tableName: counters
+  columns:
+    counter_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    counter_type_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    network_type_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    connection_string:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    description:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    CounterType:
+      local: counter_type_id
+      foreign: counter_type_id
+      type: one
+    NetworkType:
+      local: network_type_id
+      foreign: network_type_id
+      type: one
+    CountersValues:
+      local: counter_id
+      foreign: counter_id
+      type: many
+    Objects:
+      local: counter_id
+      foreign: object_link_id
+      type: many
+CountersValues:
+  connection: doctrine
+  tableName: counters_values
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    counter_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    counter_value:
+      type: float()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Counters:
+      local: counter_id
+      foreign: counter_id
+      type: one
+NetworkType:
+  connection: doctrine
+  tableName: network_type
+  columns:
+    network_type_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    network_type:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    description:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Counters:
+      local: network_type_id
+      foreign: network_type_id
+      type: many
+ObjectType:
+  connection: doctrine
+  tableName: object_type
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    object_type:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Objects:
+      local: id
+      foreign: object_type_id
+      type: many
+Objects:
+  connection: doctrine
+  tableName: objects
+  columns:
+    object_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    parent_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    object_type_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    object_link_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Counters:
+      local: object_link_id
+      foreign: counter_id
+      type: one
+    Objects:
+      local: object_id
+      foreign: parent_id
+      type: many
+    ObjectType:
+      local: object_type_id
+      foreign: id
+      type: one
+    UsersPermissions:
+      local: object_id
+      foreign: object_id
+      type: many
+UsersGroup:
+  connection: doctrine
+  tableName: users_group
+  columns:
+    gid:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    groupname:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    info:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    UsersGroups:
+      local: gid
+      foreign: gid
+      type: many
+    UsersPasswd:
+      local: gid
+      foreign: gid
+      type: many
+    UsersPermissions:
+      local: gid
+      foreign: gid
+      type: many
+UsersGroups:
+  connection: doctrine
+  tableName: users_groups
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    uid:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    gid:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    UsersGroup:
+      local: gid
+      foreign: gid
+      type: one
+    UsersPasswd:
+      local: uid
+      foreign: uid
+      type: one
+UsersPasswd:
+  connection: doctrine
+  tableName: users_passwd
+  columns:
+    uid:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    gid:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    username:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    info:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    password:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    UsersGroup:
+      local: gid
+      foreign: gid
+      type: one
+    UsersGroups:
+      local: uid
+      foreign: uid
+      type: many
+    UsersPermissions:
+      local: uid
+      foreign: uid
+      type: many
+UsersPermissions:
+  connection: doctrine
+  tableName: users_permissions
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    object_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    gid:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_read_perm:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_write_perm:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_exec_perm:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    group_read_perm:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    group_write_perm:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    group_exec_perm:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Objects:
+      local: object_id
+      foreign: object_id
+      type: one
+    UsersGroup:
+      local: gid
+      foreign: gid
+      type: one
+    UsersPasswd:
+      local: uid
+      foreign: uid
+      type: one
