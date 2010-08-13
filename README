@@ -31,7 +31,7 @@ $ ./symfony doctrine:insert-sql
 
 
 4. web test
-http://127.0.0.1:8080/fronted_dev.php/
+http://127.0.0.1:8080/frontend_dev.php/
 http://127.0.0.1:8080/frontend_dev.php/counterType
 http://127.0.0.1:8080/frontend_dev.php/counters
 http://127.0.0.1:8080/frontend_dev.php/groups
