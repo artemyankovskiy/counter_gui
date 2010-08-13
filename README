@@ -1,0 +1,42 @@
+1. apache configuration:
+
+# Убедитесь что эта строка отображается лишь однажды
+NameVirtualHost 127.0.0.1:8080
+
+# А это конфигурация Вашего проекта
+Listen 127.0.0.1:8080
+
+<VirtualHost 127.0.0.1:8080>
+  DocumentRoot "/home/counter_gui/web"
+  DirectoryIndex index.php
+  <Directory "/home/counter_gui/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  Alias /sf /home/counter_gui/lib/vendor/symfony/data/web/sf
+  <Directory "/home/counter_gui/lib/vendor/symfony/data/web/sf">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
+
+2. create database
+$ mysqladmin -uroot -pPassword create db
+
+3. configure counter_gui
+$ cd /home/counter_gui
+$ ./symfony configure:database "mysql:unix_socket=/var/run/mysql/mysql.sock;dbname=db" root Password
+$ ./symfony doctrine:insert-sql
+
+
+4. web test
+http://127.0.0.1:8080/fronted_dev.php/
+http://127.0.0.1:8080/frontend_dev.php/counterType
+http://127.0.0.1:8080/frontend_dev.php/counters
+http://127.0.0.1:8080/frontend_dev.php/groups
+http://127.0.0.1:8080/frontend_dev.php/network
+http://127.0.0.1:8080/frontend_dev.php/objectType
+http://127.0.0.1:8080/frontend_dev.php/objects
+http://127.0.0.1:8080/frontend_dev.php/users
+http://127.0.0.1:8080/frontend_dev.php/usersPermissions
