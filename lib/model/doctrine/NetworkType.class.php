@@ -12,4 +12,8 @@
  */
 class NetworkType extends BaseNetworkType
 {
+	public function __toString()
+	{
+		return sprintf("%s (%s)", $this->getNetworkType(), $this->getDescription());
+	}
 }

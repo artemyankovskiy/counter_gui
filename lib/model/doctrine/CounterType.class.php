@@ -12,4 +12,9 @@
  */
 class CounterType extends BaseCounterType
 {
+	public function __toString()
+	{
+		return sprintf("%s (%s)", $this->getCounterName(), $this->getDescription());
+	}
+
 }

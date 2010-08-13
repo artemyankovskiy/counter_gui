@@ -12,4 +12,8 @@
  */
 class UsersGroup extends BaseUsersGroup
 {
+	public function __toString()
+	{
+		return sprintf("%s (%s)", $this->getGroupname(), $this->getInfo());
+	}
 }

@@ -12,4 +12,8 @@
  */
 class ObjectType extends BaseObjectType
 {
+	public function __toString()
+	{
+		return $this->getObjectType();
+	}
 }
