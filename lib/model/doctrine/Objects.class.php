@@ -12,4 +12,9 @@
  */
 class Objects extends BaseObjects
 {
+    public function __toString()
+    {
+        return sprintf("%s (%s)", $this->getObjectId(), $this->getObjectType()->
+                             getObjectType());
+    }
 }

@@ -1,6 +1,6 @@
 <h1>Users groups List</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
       <th>Gid</th>

@@ -1,0 +1,51 @@
+Counters:
+  Counters_1:
+    CounterType: CounterType_1
+    NetworkType: NetworkType_1
+    connection_string: ip=192.168.1.1
+    description: tet
+Objects:
+  Objects_1:
+    parent_id: null
+    ObjectType: ObjectType_1
+    Counters: Counters_1
+UsersPasswd:
+  UsersPasswd_1:
+    UsersGroup: UsersGroup_1
+    username: root
+    info: administrator
+    password: password
+  UsersPasswd_2:
+    UsersGroup: UsersGroup_2
+    username: operator
+    info: 'operator user'
+    password: operator
+UsersPermissions:
+  UsersPermissions_1:
+    Objects: Objects_1
+    UsersPasswd: UsersPasswd_1
+    UsersGroup: UsersGroup_1
+    user_read_perm: '1'
+    user_write_perm: '1'
+    user_exec_perm: '1'
+    group_read_perm: '1'
+    group_write_perm: '1'
+    group_exec_perm: '1'
+UsersGroup:
+  UsersGroup_1:
+    groupname: root
+    info: 'administrative group'
+  UsersGroup_2:
+    groupname: viewer
+    info: operator
+CounterType:
+  CounterType_1:
+    counter_name: Гелиос
+    description: 'Российский счетчик'
+NetworkType:
+  NetworkType_1:
+    network_type: tcp
+    description: 'TCP/IP Network'
+ObjectType:
+  ObjectType_1:
+    object_type: Счетчик

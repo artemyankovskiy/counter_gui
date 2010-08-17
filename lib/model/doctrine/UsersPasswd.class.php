@@ -12,4 +12,8 @@
  */
 class UsersPasswd extends BaseUsersPasswd
 {
+    public function __toString()
+    {
+        return sprintf("%s (%s)", $this->getUsername(), $this->getInfo());
+    }
 }

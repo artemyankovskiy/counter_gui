@@ -1,6 +1,6 @@
 <h1>Users passwds List</h1>
 
-<table>
+<table border="">
   <thead>
     <tr>
       <th>Uid</th>
@@ -14,7 +14,7 @@
     <?php foreach ($users_passwds as $users_passwd): ?>
     <tr>
       <td><a href="<?php echo url_for('users/show?uid='.$users_passwd->getUid()) ?>"><?php echo $users_passwd->getUid() ?></a></td>
-      <td><?php echo $users_passwd->getGid() ?></td>
+      <td><?php echo $users_passwd->getUsersGroup()->getGroupname() ?></td>
       <td><?php echo $users_passwd->getUsername() ?></td>
       <td><?php echo $users_passwd->getInfo() ?></td>
       <td><?php echo $users_passwd->getPassword() ?></td>

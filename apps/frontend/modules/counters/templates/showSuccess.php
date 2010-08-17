@@ -6,11 +6,11 @@
     </tr>
     <tr>
       <th>Counter type:</th>
-      <td><?php echo $counters->getCounterTypeId() ?></td>
+      <td><?php echo $counters->getCounterType()->getCounterName() ?></td>
     </tr>
     <tr>
       <th>Network type:</th>
-      <td><?php echo $counters->getNetworkTypeId() ?></td>
+      <td><?php echo $counters->getNetworkType()->getNetworkType() ?></td>
     </tr>
     <tr>
       <th>Connection string:</th>

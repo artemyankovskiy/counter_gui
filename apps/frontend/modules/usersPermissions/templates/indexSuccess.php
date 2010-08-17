@@ -1,6 +1,6 @@
 <h1>Users permissionss List</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
       <th>Id</th>
@@ -20,8 +20,8 @@
     <tr>
       <td><a href="<?php echo url_for('usersPermissions/show?id='.$users_permissions->getId()) ?>"><?php echo $users_permissions->getId() ?></a></td>
       <td><?php echo $users_permissions->getObjectId() ?></td>
-      <td><?php echo $users_permissions->getUid() ?></td>
-      <td><?php echo $users_permissions->getGid() ?></td>
+      <td><?php echo $users_permissions->getUsersPasswd()->getUsername() ?></td>
+      <td><?php echo $users_permissions->getUsersGroup()->getGroupname() ?></td>
       <td><?php echo $users_permissions->getUserReadPerm() ?></td>
       <td><?php echo $users_permissions->getUserWritePerm() ?></td>
       <td><?php echo $users_permissions->getUserExecPerm() ?></td>

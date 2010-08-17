@@ -1,6 +1,6 @@
 <h1>Network types List</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
       <th>Network type</th>
