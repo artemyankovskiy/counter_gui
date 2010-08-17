@@ -12,8 +12,8 @@ Doctrine_Manager::getInstance()->bindComponent('Counters', 'doctrine');
  * @property integer $network_type_id
  * @property string $connection_string
  * @property string $description
- * @property CounterType $CounterType
  * @property NetworkType $NetworkType
+ * @property CounterType $CounterType
  * @property Doctrine_Collection $CountersValues
  * @property Doctrine_Collection $Objects
  * 
@@ -22,8 +22,8 @@ Doctrine_Manager::getInstance()->bindComponent('Counters', 'doctrine');
  * @method integer             getNetworkTypeId()     Returns the current record's "network_type_id" value
  * @method string              getConnectionString()  Returns the current record's "connection_string" value
  * @method string              getDescription()       Returns the current record's "description" value
- * @method CounterType         getCounterType()       Returns the current record's "CounterType" value
  * @method NetworkType         getNetworkType()       Returns the current record's "NetworkType" value
+ * @method CounterType         getCounterType()       Returns the current record's "CounterType" value
  * @method Doctrine_Collection getCountersValues()    Returns the current record's "CountersValues" collection
  * @method Doctrine_Collection getObjects()           Returns the current record's "Objects" collection
  * @method Counters            setCounterId()         Sets the current record's "counter_id" value
@@ -31,14 +31,14 @@ Doctrine_Manager::getInstance()->bindComponent('Counters', 'doctrine');
  * @method Counters            setNetworkTypeId()     Sets the current record's "network_type_id" value
  * @method Counters            setConnectionString()  Sets the current record's "connection_string" value
  * @method Counters            setDescription()       Sets the current record's "description" value
- * @method Counters            setCounterType()       Sets the current record's "CounterType" value
  * @method Counters            setNetworkType()       Sets the current record's "NetworkType" value
+ * @method Counters            setCounterType()       Sets the current record's "CounterType" value
  * @method Counters            setCountersValues()    Sets the current record's "CountersValues" collection
  * @method Counters            setObjects()           Sets the current record's "Objects" collection
  * 
  * @package    gui
  * @subpackage model
- * @author     Your name here
+ * @author     Artem Yankovskiy <admin@neverdark.ru>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseCounters extends sfDoctrineRecord
@@ -95,13 +95,13 @@ abstract class BaseCounters extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('CounterType', array(
-             'local' => 'counter_type_id',
-             'foreign' => 'counter_type_id'));
-
         $this->hasOne('NetworkType', array(
              'local' => 'network_type_id',
              'foreign' => 'network_type_id'));
+
+        $this->hasOne('CounterType', array(
+             'local' => 'counter_type_id',
+             'foreign' => 'counter_type_id'));
 
         $this->hasMany('CountersValues', array(
              'local' => 'counter_id',

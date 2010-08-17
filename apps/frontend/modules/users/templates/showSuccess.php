@@ -6,7 +6,7 @@
     </tr>
     <tr>
       <th>Gid:</th>
-      <td><?php echo $users_passwd->getGid() ?></td>
+      <td><?php echo $users_passwd->getUsersGroup()->getGroupname() ?></td>
     </tr>
     <tr>
       <th>Username:</th>

@@ -3,5 +3,5 @@ all:
     class: sfDoctrineDatabase
     param:
       dsn: 'mysql:unix_socket=/var/run/mysql/mysql.sock;dbname=db'
-      username: db
+      username: root
       password: password

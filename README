@@ -21,22 +21,14 @@ Listen 127.0.0.1:8080
   </Directory>
 </VirtualHost>
 
-2. create database
-$ mysqladmin -uroot -pPassword create db
+2. create database 
+echo "CREATE SCHEMA db DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci" | mysql -u root -p
 
 3. configure counter_gui
 $ cd /home/counter_gui
 $ ./symfony configure:database "mysql:unix_socket=/var/run/mysql/mysql.sock;dbname=db" root Password
-$ ./symfony doctrine:insert-sql
+$ ./symfony doctrine:build --all --and-load
 
 
 4. web test
-http://127.0.0.1:8080/frontend_dev.php/
-http://127.0.0.1:8080/frontend_dev.php/counterType
-http://127.0.0.1:8080/frontend_dev.php/counters
-http://127.0.0.1:8080/frontend_dev.php/groups
-http://127.0.0.1:8080/frontend_dev.php/network
-http://127.0.0.1:8080/frontend_dev.php/objectType
-http://127.0.0.1:8080/frontend_dev.php/objects
-http://127.0.0.1:8080/frontend_dev.php/users
-http://127.0.0.1:8080/frontend_dev.php/usersPermissions
+http://127.0.0.1:8080/test.php

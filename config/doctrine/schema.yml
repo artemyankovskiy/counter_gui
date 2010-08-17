@@ -66,13 +66,13 @@ Counters:
       notnull: false
       autoincrement: false
   relations:
-    CounterType:
-      local: counter_type_id
-      foreign: counter_type_id
-      type: one
     NetworkType:
       local: network_type_id
       foreign: network_type_id
+      type: one
+    CounterType:
+      local: counter_type_id
+      foreign: counter_type_id
       type: one
     CountersValues:
       local: counter_id
@@ -201,10 +201,6 @@ Objects:
       notnull: true
       autoincrement: false
   relations:
-    Counters:
-      local: object_link_id
-      foreign: counter_id
-      type: one
     Objects:
       local: object_id
       foreign: parent_id
@@ -213,10 +209,31 @@ Objects:
       local: object_type_id
       foreign: id
       type: one
+    Counters:
+      local: object_link_id
+      foreign: counter_id
+      type: one
     UsersPermissions:
       local: object_id
       foreign: object_id
       type: many
+PermissionType:
+  connection: doctrine
+  tableName: permission_type
+  columns:
+    permission_type_id:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    permission:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
 UsersGroup:
   connection: doctrine
   tableName: users_group
@@ -412,15 +429,15 @@ UsersPermissions:
       notnull: true
       autoincrement: false
   relations:
-    Objects:
-      local: object_id
-      foreign: object_id
+    UsersPasswd:
+      local: uid
+      foreign: uid
       type: one
     UsersGroup:
       local: gid
       foreign: gid
       type: one
-    UsersPasswd:
-      local: uid
-      foreign: uid
+    Objects:
+      local: object_id
+      foreign: object_id
       type: one

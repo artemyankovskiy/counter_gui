@@ -2,8 +2,8 @@ Counters:
   Counters_1:
     CounterType: CounterType_1
     NetworkType: NetworkType_1
-    connection_string: ip=192.168.1.1
-    description: tet
+    connection_string: tcp=192.168.1.1;port=3388
+    description: 'Комарова 36'
 Objects:
   Objects_1:
     parent_id: null
@@ -13,39 +13,42 @@ UsersPasswd:
   UsersPasswd_1:
     UsersGroup: UsersGroup_1
     username: root
-    info: administrator
+    info: superuser
     password: password
   UsersPasswd_2:
     UsersGroup: UsersGroup_2
     username: operator
-    info: 'operator user'
-    password: operator
+    info: operator
+    password: operatorpassword
 UsersPermissions:
   UsersPermissions_1:
     Objects: Objects_1
     UsersPasswd: UsersPasswd_1
     UsersGroup: UsersGroup_1
-    user_read_perm: '1'
-    user_write_perm: '1'
-    user_exec_perm: '1'
-    group_read_perm: '1'
-    group_write_perm: '1'
-    group_exec_perm: '1'
+    user_read_perm: '2'
+    user_write_perm: '2'
+    user_exec_perm: '4'
+    group_read_perm: '2'
+    group_write_perm: '4'
+    group_exec_perm: '4'
 UsersGroup:
   UsersGroup_1:
     groupname: root
     info: 'administrative group'
   UsersGroup_2:
-    groupname: viewer
-    info: operator
+    groupname: operator
+    info: 'group for operator'
 CounterType:
   CounterType_1:
     counter_name: Гелиос
     description: 'Российский счетчик'
 NetworkType:
   NetworkType_1:
-    network_type: tcp
-    description: 'TCP/IP Network'
+    network_type: TCP
+    description: 'Сеть TCP/IP'
 ObjectType:
   ObjectType_1:
-    object_type: Счетчик
+    object_type: 'Счетчик электроэнергии'
+PermissionType:
+  PermissionType_0:
+    permission: Inherited

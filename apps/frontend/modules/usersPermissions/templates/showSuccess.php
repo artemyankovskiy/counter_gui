@@ -10,11 +10,11 @@
     </tr>
     <tr>
       <th>Uid:</th>
-      <td><?php echo $users_permissions->getUid() ?></td>
+      <td><?php echo $users_permissions->getUsersPasswd()->getUsername() ?></td>
     </tr>
     <tr>
       <th>Gid:</th>
-      <td><?php echo $users_permissions->getGid() ?></td>
+      <td><?php echo $users_permissions->getUsersGroup()->getGroupname() ?></td>
     </tr>
     <tr>
       <th>User read perm:</th>

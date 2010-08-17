@@ -65,7 +65,7 @@ class usersPermissionsActions extends sfActions
 
     $this->redirect('usersPermissions/index');
   }
-
+  
   protected function processForm(sfWebRequest $request, sfForm $form)
   {
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));

@@ -17,9 +17,9 @@ Doctrine_Manager::getInstance()->bindComponent('UsersPermissions', 'doctrine');
  * @property integer $group_read_perm
  * @property integer $group_write_perm
  * @property integer $group_exec_perm
- * @property Objects $Objects
- * @property UsersGroup $UsersGroup
  * @property UsersPasswd $UsersPasswd
+ * @property UsersGroup $UsersGroup
+ * @property Objects $Objects
  * 
  * @method integer          getId()               Returns the current record's "id" value
  * @method integer          getObjectId()         Returns the current record's "object_id" value
@@ -31,9 +31,9 @@ Doctrine_Manager::getInstance()->bindComponent('UsersPermissions', 'doctrine');
  * @method integer          getGroupReadPerm()    Returns the current record's "group_read_perm" value
  * @method integer          getGroupWritePerm()   Returns the current record's "group_write_perm" value
  * @method integer          getGroupExecPerm()    Returns the current record's "group_exec_perm" value
- * @method Objects          getObjects()          Returns the current record's "Objects" value
- * @method UsersGroup       getUsersGroup()       Returns the current record's "UsersGroup" value
  * @method UsersPasswd      getUsersPasswd()      Returns the current record's "UsersPasswd" value
+ * @method UsersGroup       getUsersGroup()       Returns the current record's "UsersGroup" value
+ * @method Objects          getObjects()          Returns the current record's "Objects" value
  * @method UsersPermissions setId()               Sets the current record's "id" value
  * @method UsersPermissions setObjectId()         Sets the current record's "object_id" value
  * @method UsersPermissions setUid()              Sets the current record's "uid" value
@@ -44,13 +44,13 @@ Doctrine_Manager::getInstance()->bindComponent('UsersPermissions', 'doctrine');
  * @method UsersPermissions setGroupReadPerm()    Sets the current record's "group_read_perm" value
  * @method UsersPermissions setGroupWritePerm()   Sets the current record's "group_write_perm" value
  * @method UsersPermissions setGroupExecPerm()    Sets the current record's "group_exec_perm" value
- * @method UsersPermissions setObjects()          Sets the current record's "Objects" value
- * @method UsersPermissions setUsersGroup()       Sets the current record's "UsersGroup" value
  * @method UsersPermissions setUsersPasswd()      Sets the current record's "UsersPasswd" value
+ * @method UsersPermissions setUsersGroup()       Sets the current record's "UsersGroup" value
+ * @method UsersPermissions setObjects()          Sets the current record's "Objects" value
  * 
  * @package    gui
  * @subpackage model
- * @author     Your name here
+ * @author     Artem Yankovskiy <admin@neverdark.ru>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseUsersPermissions extends sfDoctrineRecord
@@ -152,16 +152,16 @@ abstract class BaseUsersPermissions extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Objects', array(
-             'local' => 'object_id',
-             'foreign' => 'object_id'));
+        $this->hasOne('UsersPasswd', array(
+             'local' => 'uid',
+             'foreign' => 'uid'));
 
         $this->hasOne('UsersGroup', array(
              'local' => 'gid',
              'foreign' => 'gid'));
 
-        $this->hasOne('UsersPasswd', array(
-             'local' => 'uid',
-             'foreign' => 'uid'));
+        $this->hasOne('Objects', array(
+             'local' => 'object_id',
+             'foreign' => 'object_id'));
     }
 }
