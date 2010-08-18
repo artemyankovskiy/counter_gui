@@ -4,4 +4,4 @@ all:
     param:
       dsn: 'mysql:unix_socket=/var/run/mysql/mysql.sock;dbname=db'
       username: root
-      password: password
+      password: Password

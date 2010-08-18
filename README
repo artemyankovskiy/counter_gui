@@ -1,4 +1,4 @@
-1. apache configuration:
+1. Конфигурация веб-сервера:
 
 # Убедитесь что эта строка отображается лишь однажды
 NameVirtualHost 127.0.0.1:8080
@@ -21,14 +21,8 @@ Listen 127.0.0.1:8080
   </Directory>
 </VirtualHost>
 
-2. create database 
-echo "CREATE SCHEMA db DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci" | mysql -u root -p
+2. Установка
+запустить скрипт install.sh
 
-3. configure counter_gui
-$ cd /home/counter_gui
-$ ./symfony configure:database "mysql:unix_socket=/var/run/mysql/mysql.sock;dbname=db" root Password
-$ ./symfony doctrine:build --all --and-load
-
-
-4. web test
+3. Проверяем работоспособность
 http://127.0.0.1:8080/countersValues

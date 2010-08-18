@@ -1,0 +1,17 @@
+/* 
+    Document   : show.css
+    Created on : 19.08.2010, 9:12:53
+    Author     : Artem Yankovskiy <admin@neverdark.ru>
+    Description:
+        Таблица стилей для отображения одиночной записи.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#view {
+    text-align: left;
+}
+

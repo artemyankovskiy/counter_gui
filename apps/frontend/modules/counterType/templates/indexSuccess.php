@@ -1,4 +1,3 @@
-<?php use_stylesheet("index.css") ?>
 <h1>Список типов счетчиков</h1>
 
 <table id="records">

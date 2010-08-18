@@ -1,0 +1,16 @@
+/* 
+    Document   : edit
+    Created on : 19.08.2010, 9:13:51
+    Author     : Artem Yankovskiy <admin@neverdark.ru>
+    Description:
+        Таблица стилей для редактирования записи.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+input, option, select {
+    border: 1px solid #000;
+}

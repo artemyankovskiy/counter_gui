@@ -1,4 +1,3 @@
-<?php use_stylesheet("index.css") ?>
 <h1>Список объектов</h1>
 
 <table id="records">

@@ -1,0 +1,23 @@
+/* 
+    Document   : notes
+    Created on : 19.08.2010, 9:14:32
+    Author     : Artem Yankovskiy <admin@neverdark.ru>
+    Description:
+        Таблица стилей для оформления примечаний.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#note {
+    font-family: sans-serif;
+    font-size: 10px;
+    font-style: italic;
+}
+
+#noteName {
+    font-weight: bold;
+    font-style: normal;
+}

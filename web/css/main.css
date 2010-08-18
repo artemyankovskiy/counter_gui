@@ -7,7 +7,7 @@ img {
 }
 
 #wrap {
-    width: 1000px;
+    width: 900px;
     margin: 0 auto;
     border: 1px solid #000;
 }
@@ -62,10 +62,5 @@ img {
     font-size: small;
 }
 
-input, option, select {
-    border: 1px solid #000;
-}
 
-#view {
-    text-align: left;
-}
+

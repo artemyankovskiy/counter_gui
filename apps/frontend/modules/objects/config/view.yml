@@ -1,0 +1,8 @@
+indexSuccess:
+    stylesheets: [index.css]
+
+showSuccess:
+    stylesheets: [show.css]
+
+editSuccess:
+    stylesheets: [edit.css]
