@@ -38,5 +38,8 @@ fi
 echo "DROP DATABASE IF EXISTS $dbname" | mysql -u$dbuser -p$dbpassword
 echo "CREATE SCHEMA $dbname DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci" | mysql -u$dbuser -p$dbpassword
 ./symfony cache:clear
+./symfony log:clear
+touch ./cache/.keep
+touch ./log/.keep
 ./symfony configure:database "mysql:unix_socket=$mysqlsock;dbname=$dbname" $dbuser $dbpassword
 echo y | ./symfony doctrine:build --all --and-load
