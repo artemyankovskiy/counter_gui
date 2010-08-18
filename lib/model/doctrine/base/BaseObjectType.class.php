@@ -9,14 +9,17 @@ Doctrine_Manager::getInstance()->bindComponent('ObjectType', 'doctrine');
  * 
  * @property integer $id
  * @property string $object_type
+ * @property string $linked_table
  * @property Doctrine_Collection $Objects
  * 
- * @method integer             getId()          Returns the current record's "id" value
- * @method string              getObjectType()  Returns the current record's "object_type" value
- * @method Doctrine_Collection getObjects()     Returns the current record's "Objects" collection
- * @method ObjectType          setId()          Sets the current record's "id" value
- * @method ObjectType          setObjectType()  Sets the current record's "object_type" value
- * @method ObjectType          setObjects()     Sets the current record's "Objects" collection
+ * @method integer             getId()           Returns the current record's "id" value
+ * @method string              getObjectType()   Returns the current record's "object_type" value
+ * @method string              getLinkedTable()  Returns the current record's "linked_table" value
+ * @method Doctrine_Collection getObjects()      Returns the current record's "Objects" collection
+ * @method ObjectType          setId()           Sets the current record's "id" value
+ * @method ObjectType          setObjectType()   Sets the current record's "object_type" value
+ * @method ObjectType          setLinkedTable()  Sets the current record's "linked_table" value
+ * @method ObjectType          setObjects()      Sets the current record's "Objects" collection
  * 
  * @package    gui
  * @subpackage model
@@ -37,6 +40,15 @@ abstract class BaseObjectType extends sfDoctrineRecord
              'length' => 4,
              ));
         $this->hasColumn('object_type', 'string', 45, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 45,
+             ));
+        $this->hasColumn('linked_table', 'string', 45, array(
              'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,

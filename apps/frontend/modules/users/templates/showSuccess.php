@@ -1,23 +1,23 @@
-<table>
+<table id="view">
   <tbody>
     <tr>
-      <th>Uid:</th>
+      <th>UID:</th>
       <td><?php echo $users_passwd->getUid() ?></td>
     </tr>
     <tr>
-      <th>Gid:</th>
+      <th>Группа:</th>
       <td><?php echo $users_passwd->getUsersGroup()->getGroupname() ?></td>
     </tr>
     <tr>
-      <th>Username:</th>
+      <th>Пользователь:</th>
       <td><?php echo $users_passwd->getUsername() ?></td>
     </tr>
     <tr>
-      <th>Info:</th>
+      <th>Информация:</th>
       <td><?php echo $users_passwd->getInfo() ?></td>
     </tr>
     <tr>
-      <th>Password:</th>
+      <th>Пароль:</th>
       <td><?php echo $users_passwd->getPassword() ?></td>
     </tr>
   </tbody>
@@ -25,6 +25,6 @@
 
 <hr />
 
-<a href="<?php echo url_for('users/edit?uid='.$users_passwd->getUid()) ?>">Edit</a>
+<a href="<?php echo url_for('users/edit?uid='.$users_passwd->getUid()) ?>">Редактирование</a>
 &nbsp;
-<a href="<?php echo url_for('users/index') ?>">List</a>
+<a href="<?php echo url_for('users/index') ?>">Список</a>

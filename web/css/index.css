@@ -1,0 +1,18 @@
+/* 
+    Document   : index
+    Created on : 18.08.2010, 16:15:00
+    Author     : Artem Yankovskiy <admin@neverdark.ru>
+    Description:
+        Таблица стилей для отображения всех записей из таблиц СУБД.
+*/
+
+#records, #records td, #records th {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 2px;
+    text-align: center;
+}
+
+#records td {
+    font-size: 14px;    
+}

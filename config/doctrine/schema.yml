@@ -164,6 +164,13 @@ ObjectType:
       primary: false
       notnull: true
       autoincrement: false
+    linked_table:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
   relations:
     Objects:
       local: id

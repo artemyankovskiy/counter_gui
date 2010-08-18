@@ -13,11 +13,13 @@ abstract class BaseObjectTypeFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'object_type' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'object_type'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'linked_table' => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'object_type' => new sfValidatorPass(array('required' => false)),
+      'object_type'  => new sfValidatorPass(array('required' => false)),
+      'linked_table' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('object_type_filters[%s]');
@@ -37,8 +39,9 @@ abstract class BaseObjectTypeFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'          => 'Number',
-      'object_type' => 'Text',
+      'id'           => 'Number',
+      'object_type'  => 'Text',
+      'linked_table' => 'Text',
     );
   }
 }

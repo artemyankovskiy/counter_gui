@@ -31,4 +31,4 @@ $ ./symfony doctrine:build --all --and-load
 
 
 4. web test
-http://127.0.0.1:8080/test.php
+http://127.0.0.1:8080/countersValues

@@ -12,5 +12,29 @@
  */
 class UsersPermissions extends BaseUsersPermissions
 {
+    const INHERITED = 1;
+    const ALLOW     = 2;
+    const DENY      = 4;
 
+    public function getPermission($perm)
+    {
+        $ret = "";
+        switch ( $perm )
+        {
+            case self::INHERITED:
+                $ret = "Унаследовано";
+                break;
+            case self::ALLOW:
+                $ret = "Разрешено";
+                break;
+            case self::DENY:
+                $ret = "Запрещено";
+                break;
+            default:
+                $ret = "Неверные права доступа";
+                break;
+        }
+
+        return $ret;
+    }
 }

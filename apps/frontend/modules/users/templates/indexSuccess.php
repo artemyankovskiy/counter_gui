@@ -1,13 +1,14 @@
-<h1>Users passwds List</h1>
+<?php use_stylesheet("index.css") ?>
+<h1>Список пользователей</h1>
 
-<table border="">
+<table id="records">
   <thead>
     <tr>
-      <th>Uid</th>
-      <th>Gid</th>
-      <th>Username</th>
-      <th>Info</th>
-      <th>Password</th>
+      <th>UID</th>
+      <th>Группа</th>
+      <th>Пользователь</th>
+      <th>Информация</th>
+      <th>Пароль</th>
     </tr>
   </thead>
   <tbody>
@@ -23,4 +24,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('users/new') ?>">New</a>
+  <a href="<?php echo url_for('users/new') ?>">Добавить</a>

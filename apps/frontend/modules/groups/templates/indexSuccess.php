@@ -1,11 +1,12 @@
-<h1>Users groups List</h1>
+<?php use_stylesheet("index.css") ?>
+<h1>Список групп</h1>
 
-<table border="1">
+<table id="records">
   <thead>
     <tr>
-      <th>Gid</th>
-      <th>Groupname</th>
-      <th>Info</th>
+      <th>GID</th>
+      <th>Група</th>
+      <th>Информация</th>
     </tr>
   </thead>
   <tbody>
@@ -19,4 +20,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('groups/new') ?>">New</a>
+  <a href="<?php echo url_for('groups/new') ?>">Добавить</a>

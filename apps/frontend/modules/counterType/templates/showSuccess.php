@@ -1,15 +1,15 @@
-<table>
+<table id="view">
   <tbody>
     <tr>
-      <th>Counter type:</th>
+      <th>ID:</th>
       <td><?php echo $counter_type->getCounterTypeId() ?></td>
     </tr>
     <tr>
-      <th>Counter name:</th>
+      <th>Название счетчика:</th>
       <td><?php echo $counter_type->getCounterName() ?></td>
     </tr>
     <tr>
-      <th>Description:</th>
+      <th>Описание:</th>
       <td><?php echo $counter_type->getDescription() ?></td>
     </tr>
   </tbody>
@@ -17,6 +17,6 @@
 
 <hr />
 
-<a href="<?php echo url_for('counterType/edit?counter_type_id='.$counter_type->getCounterTypeId()) ?>">Edit</a>
+<a href="<?php echo url_for('counterType/edit?counter_type_id='.$counter_type->getCounterTypeId()) ?>">Редактировать</a>
 &nbsp;
-<a href="<?php echo url_for('counterType/index') ?>">List</a>
+<a href="<?php echo url_for('counterType/index') ?>">Список</a>

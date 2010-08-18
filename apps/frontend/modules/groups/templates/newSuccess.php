@@ -1,3 +1,3 @@
-<h1>New Users group</h1>
+<h1>Новая группа</h1>
 
 <?php include_partial('form', array('form' => $form)) ?>

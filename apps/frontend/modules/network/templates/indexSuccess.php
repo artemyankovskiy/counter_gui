@@ -1,11 +1,12 @@
-<h1>Network types List</h1>
+<?php use_stylesheet("index.css") ?>
+<h1>Список типов сетей</h1>
 
-<table border="1">
+<table id="records">
   <thead>
     <tr>
-      <th>Network type</th>
-      <th>Network type</th>
-      <th>Description</th>
+      <th>ID</th>
+      <th>Тип сети</th>
+      <th>Описание</th>
     </tr>
   </thead>
   <tbody>
@@ -19,4 +20,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('network/new') ?>">New</a>
+  <a href="<?php echo url_for('network/new') ?>">Добавить</a>

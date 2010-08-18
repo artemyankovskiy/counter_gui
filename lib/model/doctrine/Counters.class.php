@@ -12,4 +12,9 @@
  */
 class Counters extends BaseCounters
 {
+    public function  __toString()
+    {
+        return sprintf( "%s (%s)", $this->getCounterType()->getCounterName(),
+                                   $this->getDescription() );
+    }
 }

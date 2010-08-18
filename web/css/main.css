@@ -1,0 +1,71 @@
+body {
+    background: #fff;
+}
+
+img {
+    border-width: 0px;
+}
+
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+#container {
+    background: #fff;
+}
+
+#title {
+    float: left;
+    width: 500px;
+    color: #5c92e8;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 5px;
+
+}
+
+#menu {
+    float: right;
+}
+
+#content {
+    border-top-style: solid;
+    border-top-color: #000;
+    border-top-width: 1px;
+    padding: 5px;
+    clear: both;
+    background: #5c92e8;
+    color: #140404;
+}
+
+#content a{
+    color: #140404;
+}
+
+#content a:hover{
+    color: #fff;
+}
+
+#footer {
+    border-top-style: solid;
+    border-top-color: #000;
+    border-top-width: 1px;
+    clear: both;
+    background: #5c92e8;
+    color: #fff;
+    text-align: center;
+    font-family: serif;
+    font-size: small;
+}
+
+input, option, select {
+    border: 1px solid #000;
+}
+
+#view {
+    text-align: left;
+}

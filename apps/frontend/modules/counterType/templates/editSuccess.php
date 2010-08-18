@@ -1,3 +1,3 @@
-<h1>Edit Counter type</h1>
+<h1>Редактирование типа счетчика</h1>
 
 <?php include_partial('form', array('form' => $form)) ?>

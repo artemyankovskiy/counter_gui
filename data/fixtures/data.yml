@@ -4,6 +4,15 @@ Counters:
     NetworkType: NetworkType_1
     connection_string: tcp=192.168.1.1;port=3388
     description: 'Комарова 36'
+CountersValues:
+  CountersValues_1:
+    Counters: Counters_1
+    timestamp: '2010-08-18 09:36:00'
+    counter_value: '4800.00'
+  CountersValues_2:
+    Counters: Counters_1
+    timestamp: '2010-08-19 09:45:00'
+    counter_value: '4900.00'
 Objects:
   Objects_1:
     parent_id: null
@@ -27,6 +36,16 @@ UsersPermissions:
     UsersGroup: UsersGroup_1
     user_read_perm: '2'
     user_write_perm: '2'
+    user_exec_perm: '2'
+    group_read_perm: '2'
+    group_write_perm: '2'
+    group_exec_perm: '2'
+  UsersPermissions_2:
+    Objects: Objects_1
+    UsersPasswd: UsersPasswd_2
+    UsersGroup: UsersGroup_2
+    user_read_perm: '2'
+    user_write_perm: '4'
     user_exec_perm: '4'
     group_read_perm: '2'
     group_write_perm: '4'
@@ -49,6 +68,7 @@ NetworkType:
 ObjectType:
   ObjectType_1:
     object_type: 'Счетчик электроэнергии'
+    linked_table: counters
 PermissionType:
   PermissionType_0:
     permission: Inherited

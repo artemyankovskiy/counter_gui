@@ -1,15 +1,15 @@
-<table>
+<table id="view">
   <tbody>
     <tr>
-      <th>Network type:</th>
+      <th>ID:</th>
       <td><?php echo $network_type->getNetworkTypeId() ?></td>
     </tr>
     <tr>
-      <th>Network type:</th>
+      <th>Тип сети:</th>
       <td><?php echo $network_type->getNetworkType() ?></td>
     </tr>
     <tr>
-      <th>Description:</th>
+      <th>Описание:</th>
       <td><?php echo $network_type->getDescription() ?></td>
     </tr>
   </tbody>
@@ -17,6 +17,6 @@
 
 <hr />
 
-<a href="<?php echo url_for('network/edit?network_type_id='.$network_type->getNetworkTypeId()) ?>">Edit</a>
+<a href="<?php echo url_for('network/edit?network_type_id='.$network_type->getNetworkTypeId()) ?>">Редактировать</a>
 &nbsp;
-<a href="<?php echo url_for('network/index') ?>">List</a>
+<a href="<?php echo url_for('network/index') ?>">Список</a>

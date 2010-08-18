@@ -1,9 +1,0 @@
-<a href="frontend_dev.php">Main</a><br />
-<a href="frontend_dev.php/counterType">counterType</a><br />
-<a href="frontend_dev.php/counters">counters</a><br />
-<a href="frontend_dev.php/groups">groups</a><br />
-<a href="frontend_dev.php/network">nework</a><br />
-<a href="frontend_dev.php/objectType">objectType</a><br />
-<a href="frontend_dev.php/objects">objects</a><br />
-<a href="frontend_dev.php/users">users</a><br />
-<a href="frontend_dev.php/usersPermissions">usersPermissions</a><br />

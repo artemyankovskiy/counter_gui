@@ -1,11 +1,12 @@
-<h1>Counter types List</h1>
+<?php use_stylesheet("index.css") ?>
+<h1>Список типов счетчиков</h1>
 
-<table border="1"">
+<table id="records">
   <thead>
     <tr>
-      <th>Counter type</th>
-      <th>Counter name</th>
-      <th>Description</th>
+      <th>ID</th>
+      <th>Название счетчика</th>
+      <th>Описание</th>
     </tr>
   </thead>
   <tbody>
@@ -19,4 +20,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('counterType/new') ?>">New</a>
+  <a href="<?php echo url_for('counterType/new') ?>">Добавить</a>

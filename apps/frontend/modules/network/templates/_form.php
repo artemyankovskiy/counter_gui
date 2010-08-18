@@ -9,11 +9,11 @@
     <tfoot>
       <tr>
         <td colspan="2">
-          &nbsp;<a href="<?php echo url_for('network/index') ?>">Back to list</a>
+          &nbsp;<a href="<?php echo url_for('network/index') ?>">Список</a>
           <?php if (!$form->getObject()->isNew()): ?>
-            &nbsp;<?php echo link_to('Delete', 'network/delete?network_type_id='.$form->getObject()->getNetworkTypeId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
+            &nbsp;<?php echo link_to('Удалить', 'network/delete?network_type_id='.$form->getObject()->getNetworkTypeId(), array('method' => 'delete', 'confirm' => 'Вы уверены?')) ?>
           <?php endif; ?>
-          <input type="submit" value="Save" />
+          <input type="submit" value="Сохранить" />
         </td>
       </tr>
     </tfoot>

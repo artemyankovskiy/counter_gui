@@ -1,3 +1,3 @@
-<h1>Edit Object type</h1>
+<h1>Редактирование типа объекта</h1>
 
 <?php include_partial('form', array('form' => $form)) ?>

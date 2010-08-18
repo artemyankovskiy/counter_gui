@@ -1,13 +1,14 @@
-<h1>Counterss List</h1>
+<?php use_stylesheet("index.css") ?>
+<h1>Список счетчиков</h1>
 
-<table border="1">
+<table id="records">
   <thead>
     <tr>
-      <th>Counter</th>
-      <th>Counter type</th>
-      <th>Network type</th>
-      <th>Connection string</th>
-      <th>Description</th>
+      <th>ID</th>
+      <th>Тип счетчика</th>
+      <th>Тип сети</th>
+      <th>Строка подключения</th>
+      <th>Описание</th>
     </tr>
   </thead>
   <tbody>
@@ -23,4 +24,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('counters/new') ?>">New</a>
+  <a href="<?php echo url_for('counters/new') ?>">Добавить</a>

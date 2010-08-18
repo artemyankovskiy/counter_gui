@@ -1,3 +1,3 @@
-<h1>Edit Users group</h1>
+<h1>Редактирование группы</h1>
 
 <?php include_partial('form', array('form' => $form)) ?>

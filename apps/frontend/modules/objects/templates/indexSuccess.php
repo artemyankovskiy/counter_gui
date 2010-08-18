@@ -1,12 +1,13 @@
-<h1>Objectss List</h1>
+<?php use_stylesheet("index.css") ?>
+<h1>Список объектов</h1>
 
-<table border="1">
+<table id="records">
   <thead>
     <tr>
-      <th>Object</th>
-      <th>Parent</th>
-      <th>Object type</th>
-      <th>Object link</th>
+      <th>ID</th>
+      <th>Родитель</th>
+      <th>Тип объекта</th>
+      <th>Объект</th>
     </tr>
   </thead>
   <tbody>
@@ -14,11 +15,11 @@
     <tr>
       <td><a href="<?php echo url_for('objects/show?object_id='.$objects->getObjectId()) ?>"><?php echo $objects->getObjectId() ?></a></td>
       <td><?php echo $objects->getParentId() ?></td>
-      <td><?php echo $objects->getObjectTypeId() ?></td>
-      <td><?php echo $objects->getObjectLinkId() ?></td>
+      <td><?php echo $objects->getObjectType()->getObjectType() ?></td>
+      <td><?php echo sprintf( "%s (%s)", $objects->getCounters()->getCounterType()->getCounterName(), $objects->getCounters()->getDescription() ) ?></td>
     </tr>
     <?php endforeach; ?>
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('objects/new') ?>">New</a>
+  <a href="<?php echo url_for('objects/new') ?>">Добавить</a>

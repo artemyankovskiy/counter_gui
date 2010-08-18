@@ -1,3 +1,3 @@
-<h1>New Objects</h1>
+<h1>Новый объект</h1>
 
 <?php include_partial('form', array('form' => $form)) ?>

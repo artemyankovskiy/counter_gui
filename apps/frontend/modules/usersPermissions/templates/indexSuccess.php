@@ -1,18 +1,19 @@
-<h1>Users permissionss List</h1>
+<?php use_stylesheet("index.css") ?>
+<h1>Список прав доступа</h1>
 
-<table border="1">
+<table id="records">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Object</th>
-      <th>Uid</th>
-      <th>Gid</th>
-      <th>User read perm</th>
-      <th>User write perm</th>
-      <th>User exec perm</th>
-      <th>Group read perm</th>
-      <th>Group write perm</th>
-      <th>Group exec perm</th>
+      <th>ID</th>
+      <th>Объект</th>
+      <th>Пользователь</th>
+      <th>Группа</th>
+      <th>Чтение для пользователя</th>
+      <th>Запись для пользователя</th>
+      <th>Выполнение для пользователя</th>
+      <th>Чтение для группы</th>
+      <th>Запись для группы</th>
+      <th>Выполнение для группы</th>
     </tr>
   </thead>
   <tbody>
@@ -22,15 +23,15 @@
       <td><?php echo $users_permissions->getObjectId() ?></td>
       <td><?php echo $users_permissions->getUsersPasswd()->getUsername() ?></td>
       <td><?php echo $users_permissions->getUsersGroup()->getGroupname() ?></td>
-      <td><?php echo $users_permissions->getUserReadPerm() ?></td>
-      <td><?php echo $users_permissions->getUserWritePerm() ?></td>
-      <td><?php echo $users_permissions->getUserExecPerm() ?></td>
-      <td><?php echo $users_permissions->getGroupReadPerm() ?></td>
-      <td><?php echo $users_permissions->getGroupWritePerm() ?></td>
-      <td><?php echo $users_permissions->getGroupExecPerm() ?></td>
+      <td><?php echo $users_permissions->getPermission( $users_permissions->getUserReadPerm() ) ?></td>
+      <td><?php echo $users_permissions->getPermission( $users_permissions->getUserWritePerm() ) ?></td>
+      <td><?php echo $users_permissions->getPermission( $users_permissions->getUserExecPerm() ) ?></td>
+      <td><?php echo $users_permissions->getPermission( $users_permissions->getGroupReadPerm() ) ?></td>
+      <td><?php echo $users_permissions->getPermission( $users_permissions->getGroupWritePerm() ) ?></td>
+      <td><?php echo $users_permissions->getPermission( $users_permissions->getGroupExecPerm() ) ?></td>
     </tr>
     <?php endforeach; ?>
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('usersPermissions/new') ?>">New</a>
+  <a href="<?php echo url_for('usersPermissions/new') ?>">Добавить</a>

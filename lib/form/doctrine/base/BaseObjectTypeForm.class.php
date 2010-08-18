@@ -15,13 +15,15 @@ abstract class BaseObjectTypeForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'          => new sfWidgetFormInputHidden(),
-      'object_type' => new sfWidgetFormInputText(),
+      'id'           => new sfWidgetFormInputHidden(),
+      'object_type'  => new sfWidgetFormInputText(),
+      'linked_table' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'object_type' => new sfValidatorString(array('max_length' => 45)),
+      'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'object_type'  => new sfValidatorString(array('max_length' => 45)),
+      'linked_table' => new sfValidatorString(array('max_length' => 45)),
     ));
 
     $this->widgetSchema->setNameFormat('object_type[%s]');

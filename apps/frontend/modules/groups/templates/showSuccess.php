@@ -1,15 +1,15 @@
-<table>
+<table id="view">
   <tbody>
     <tr>
-      <th>Gid:</th>
+      <th>GID:</th>
       <td><?php echo $users_group->getGid() ?></td>
     </tr>
     <tr>
-      <th>Groupname:</th>
+      <th>Группа:</th>
       <td><?php echo $users_group->getGroupname() ?></td>
     </tr>
     <tr>
-      <th>Info:</th>
+      <th>Информация:</th>
       <td><?php echo $users_group->getInfo() ?></td>
     </tr>
   </tbody>
@@ -17,6 +17,6 @@
 
 <hr />
 
-<a href="<?php echo url_for('groups/edit?gid='.$users_group->getGid()) ?>">Edit</a>
+<a href="<?php echo url_for('groups/edit?gid='.$users_group->getGid()) ?>">Редактировать</a>
 &nbsp;
-<a href="<?php echo url_for('groups/index') ?>">List</a>
+<a href="<?php echo url_for('groups/index') ?>">Список</a>

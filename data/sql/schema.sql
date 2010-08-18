@@ -2,7 +2,7 @@ CREATE TABLE counter_type (counter_type_id INT AUTO_INCREMENT, counter_name VARC
 CREATE TABLE counters (counter_id INT AUTO_INCREMENT, counter_type_id INT NOT NULL, network_type_id INT NOT NULL, connection_string VARCHAR(255) NOT NULL, description VARCHAR(255), INDEX network_type_id_idx (network_type_id), INDEX counter_type_id_idx (counter_type_id), PRIMARY KEY(counter_id)) ENGINE = INNODB;
 CREATE TABLE counters_values (id INT AUTO_INCREMENT, counter_id INT NOT NULL, timestamp DATETIME NOT NULL, counter_value FLOAT(18, 2) NOT NULL, INDEX counter_id_idx (counter_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE network_type (network_type_id INT AUTO_INCREMENT, network_type VARCHAR(45) NOT NULL, description VARCHAR(255), PRIMARY KEY(network_type_id)) ENGINE = INNODB;
-CREATE TABLE object_type (id INT AUTO_INCREMENT, object_type VARCHAR(45) NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE object_type (id INT AUTO_INCREMENT, object_type VARCHAR(45) NOT NULL, linked_table VARCHAR(45) NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE objects (object_id INT AUTO_INCREMENT, parent_id INT, object_type_id INT NOT NULL, object_link_id INT NOT NULL, INDEX object_type_id_idx (object_type_id), INDEX object_link_id_idx (object_link_id), PRIMARY KEY(object_id)) ENGINE = INNODB;
 CREATE TABLE permission_type (permission_type_id SMALLINT, permission VARCHAR(45) NOT NULL, PRIMARY KEY(permission_type_id)) ENGINE = INNODB;
 CREATE TABLE users_group (gid INT AUTO_INCREMENT, groupname VARCHAR(45) NOT NULL, info VARCHAR(255) NOT NULL, PRIMARY KEY(gid)) ENGINE = INNODB;
