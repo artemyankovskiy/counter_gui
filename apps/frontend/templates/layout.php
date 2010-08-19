@@ -17,7 +17,7 @@
           <div id="menu">
               <table>
                   <tr>
-                      <td><a href="/countersValues"><img src="/images/icons/home.gif" alt="Home" title="Home" /></a></td>
+                      <td><a href="/"><img src="/images/icons/home.gif" alt="Home" title="Home" /></a></td>
                       <td><a href="/network"><img src="/images/icons/network.gif" alt="Network" title="Network" /></a></td>
                       <td><a href="/objects"><img src="/images/icons/objects.gif" alt="Objects" title="Objects" /></a></td>
                       <td><a href="/counters"><img src="/images/icons/counters.gif" alt="Counters" title="Counters" /></a></td>
